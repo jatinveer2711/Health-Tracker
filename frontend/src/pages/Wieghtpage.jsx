@@ -19,7 +19,7 @@ export default function WeightPage() {
         },
       });
       setWeights(res.data);
-      console.log(res.data) // response is an array
+      
     } catch (error) {
       console.error("Error fetching weights:", error);
     }

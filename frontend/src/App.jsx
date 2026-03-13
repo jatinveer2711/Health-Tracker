@@ -13,12 +13,14 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import { useAuth } from './assets/context/Authcontext';
 import Home from './pages/Home';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   const {token} = useAuth()
   return (
     <Router>
      {token && <Navbar></Navbar>} 
+     
       <Routes>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
@@ -34,6 +36,7 @@ export default function App() {
               <Route path='/monthly' element={<ProtectedRoute><Monthly></Monthly></ProtectedRoute>}></Route>
 
       </Routes>
+      {token && <Footer></Footer>}
     </Router>
   )
 }
