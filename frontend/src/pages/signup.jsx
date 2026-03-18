@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function signup() {
+export default function Signup() {
   const [formdata, setFormdata] = useState({
     name: "",
     lastname: "",
