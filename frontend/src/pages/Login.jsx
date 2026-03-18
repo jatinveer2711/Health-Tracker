@@ -26,7 +26,7 @@ export default function Login() {
     setError("");
 
     try {
-      const res =  await axios.post('http://localhost:5000/api/users/login',formdata)
+      const res =  await axios.post('https://health-tracker-l043.onrender.com/api/users/login',formdata)
 
       if( res.status==200){
         login(res.data.token)

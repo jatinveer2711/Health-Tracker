@@ -25,7 +25,7 @@ export default function DietPage() {
   // Fetch diet
   const fetchDiet = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/diet/getAll', {
+      const res = await axios.get('https://health-tracker-l043.onrender.com/api/diet/getAll', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAllfoodata(res.data);
@@ -38,7 +38,7 @@ export default function DietPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/diet/create', foodata, {
+      await axios.post('https://health-tracker-l043.onrender.com/api/diet/create', foodata, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFoodata({ foodtype: "", calories: "", fats: "", protein: "", carbs: "" });
@@ -57,7 +57,7 @@ export default function DietPage() {
 
   const handleDelete = async(id)=>{
     try {
-      const res = await axios.delete(`http://localhost:5000/api/diet/delete/${id}`,{
+      const res = await axios.delete(`https://health-tracker-l043.onrender.com/api/diet/delete/${id}`,{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -75,7 +75,7 @@ export default function DietPage() {
     e.preventDefault()
     try {
       if(!editId) return;
-      const res = await axios.put(`http://localhost:5000/api/diet/update/${editId}`,editDiet,{
+      const res = await axios.put(`https://health-tracker-l043.onrender.com/api/diet/update/${editId}`,editDiet,{
         headers:{
           Authorization:`Bearer ${token}`
         }

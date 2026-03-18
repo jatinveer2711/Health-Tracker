@@ -15,7 +15,7 @@ export default function SleepPage() {
   //fetch sleep data
   const fetchSleep = async ()=>{
     try {
-      const res = await axios.get('http://localhost:5000/api/sleep/getAll',{
+      const res = await axios.get('https://health-tracker-l043.onrender.com/api/sleep/getAll',{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -31,7 +31,7 @@ export default function SleepPage() {
   const handleSumbit = async(e)=>{
      e.preventDefault();
      try {
-      await axios.post('http://localhost:5000/api/sleep/create',sleep,{
+      await axios.post('https://health-tracker-l043.onrender.com/api/sleep/create',sleep,{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -51,7 +51,7 @@ export default function SleepPage() {
 
   const handleDelete = async(id)=>{
     try {
-      const res = await axios.delete(`http://localhost:5000/api/sleep/delete/${id}`,{
+      const res = await axios.delete(`https://health-tracker-l043.onrender.com/api/sleep/delete/${id}`,{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -70,7 +70,7 @@ export default function SleepPage() {
     e.preventDefault()
     try {
       if(!editId) return
-      const res = await axios.put(`http://localhost:5000/api/sleep/update/${editId}`,editSleep,{
+      const res = await axios.put(`https://health-tracker-l043.onrender.com/api/sleep/update/${editId}`,editSleep,{
         headers:{
           Authorization:`Bearer ${token}`
         }

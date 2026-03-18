@@ -18,7 +18,7 @@ export default function Exercise() {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:5000/api/exercise/getAll", {
+      const res = await axios.get("https://health-tracker-l043.onrender.com/api/exercise/getAll", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAllExercises(res.data);
@@ -35,7 +35,7 @@ export default function Exercise() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/exercise/create", exercise, {
+      await axios.post("https://health-tracker-l043.onrender.com/api/exercise/create", exercise, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setExercise({ type: "", duration: "" ,caloriesBurned:""}); // Reset form
@@ -56,7 +56,7 @@ export default function Exercise() {
 
   const handleDelete = async(id)=>{
     try {
-      const res = await axios.delete(`http://localhost:5000/api/exercise/delete/${id}`,{
+      const res = await axios.delete(`https://health-tracker-l043.onrender.com/api/exercise/delete/${id}`,{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -74,7 +74,7 @@ export default function Exercise() {
     e.preventDefault()
     try {
       if(!editId) return;
-      await axios.put(`http://localhost:5000/api/exercise/update/${editId}`,editExercise,{
+      await axios.put(`https://health-tracker-l043.onrender.com/api/exercise/update/${editId}`,editExercise,{
         headers:{
           Authorization: `Bearer ${token}`
         }

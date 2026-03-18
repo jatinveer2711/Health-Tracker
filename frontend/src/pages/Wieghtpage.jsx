@@ -13,7 +13,7 @@ export default function WeightPage() {
   // fetch weights (latest first)
   const fetchWeights = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/weight/getAll", {
+      const res = await axios.get("https://health-tracker-l043.onrender.com/api/weight/getAll", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -34,7 +34,7 @@ export default function WeightPage() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5000/api/weight/create",
+        "https://health-tracker-l043.onrender.com/api/weight/create",
         { weight: Number(weight) }, // ensure number
         {
           headers: {
@@ -54,7 +54,7 @@ export default function WeightPage() {
 
   const handleDelete = async(id)=>{
     try {
-      const res = await axios.delete(`http://localhost:5000/api/weight/delete/${id}`,{
+      const res = await axios.delete(`https://health-tracker-l043.onrender.com/api/weight/delete/${id}`,{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -74,7 +74,7 @@ export default function WeightPage() {
     e.preventDefault()
     try {
       if(!editId) return;
-      await axios.put(`http://localhost:5000/api/weight/update/${editId}`,editWeight,{
+      await axios.put(`https://health-tracker-l043.onrender.com/api/weight/update/${editId}`,editWeight,{
     headers:{
       Authorization:`Bearer ${token}`
     }})

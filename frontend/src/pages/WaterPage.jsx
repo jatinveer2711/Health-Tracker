@@ -13,7 +13,7 @@ export default function WaterPage() {
 //get enteries
   const fetchEntries = async()=>{
     try {
-      const res = await axios.get('http://localhost:5000/api/water/getAll',{
+      const res = await axios.get('https://health-tracker-l043.onrender.com/api/water/getAll',{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -29,7 +29,7 @@ export default function WaterPage() {
 const handleSumbit = async(e)=>{
   e.preventDefault();
   try {
-     await axios.post('http://localhost:5000/api/water/create',{amount},{
+     await axios.post('https://health-tracker-l043.onrender.com/api/water/create',{amount},{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -48,7 +48,7 @@ useEffect(()=>{
 // delete 
 const handleDelete = async(id)=>{
   try {
-    const res = await axios.delete(`http://localhost:5000/api/water/delete/${id}`,{
+    const res = await axios.delete(`https://health-tracker-l043.onrender.com/api/water/delete/${id}`,{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -67,7 +67,7 @@ const hanldeUpdate = async(e)=>{
   e.preventDefault()
   try {
     if(!editId) return;
-    await axios.put(`http://localhost:5000/api/water/update/${editId}`,editamount,{
+    await axios.put(`https://health-tracker-l043.onrender.com/api/water/update/${editId}`,editamount,{
       headers:{
         Authorization:`Bearer ${token}`
       }
