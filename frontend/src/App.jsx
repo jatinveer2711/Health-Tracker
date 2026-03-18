@@ -1,5 +1,5 @@
 import React from 'react'
-import Signup from './pages/signup';
+import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Water from './pages/WaterPage';
