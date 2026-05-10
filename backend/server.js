@@ -13,13 +13,26 @@ import dashboardRoute from './routes/dashboard.route.js'
 import monthlyRoute from './routes/monthlyReport.route.js'
 import dns from 'dns';
 
+
+
+
 dns.setServers(['8.8.8.8','1.1.1.1']);
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'https://health-tracker-pi-two.vercel.app' // 👈 apna deployed frontend URL daalo
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 //Db connection 
 ConnectDB();
