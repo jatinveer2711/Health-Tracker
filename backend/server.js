@@ -21,7 +21,8 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //middleware
-app.use(express.json());
+
+
 
 app.use(cors({
   origin: [
@@ -34,14 +35,17 @@ app.use(cors({
   credentials: true
 }));
 
+app.use(express.json());
+
+
 //Db connection 
 ConnectDB();
 
 
 
-// app.get('/',(req,res)=>{
-//     res.send("api is running....")
-// })
+app.get('/',(req,res)=>{
+    res.send("api is running....")
+})
 
 //routes
 
