@@ -11,8 +11,9 @@ import sleepRoute from './routes/sleep.route.js'
 import weightRoute from './routes/weight.route.js'
 import dashboardRoute from './routes/dashboard.route.js'
 import monthlyRoute from './routes/monthlyReport.route.js'
+import dns from 'dns';
 
-
+dns.setServers(['8.8.8.8','1.1.1.1']);
 const app = express();
 const PORT = process.env.PORT || 4000;
 
