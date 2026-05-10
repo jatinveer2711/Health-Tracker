@@ -29,7 +29,7 @@ export default function Signup() {
 
     try {
       const res = await axios.post(
-        "https://health-tracker-l043.onrender.com/api/users/signup",
+        "http://localhost:5000/api/users/signup",
         formdata
       );
 
