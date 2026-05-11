@@ -34,7 +34,7 @@
       useEffect(()=>{
           const fetchMonthlyData = async()=>{
             try {
-              const res = await axios.get('http://localhost:5000/api/monthly/getAll',{
+              const res = await axios.get('https://health-tracker-1-5pod.onrender.com/api/monthly/getAll',{
                   headers:{
                       Authorization:`Bearer ${token}`
                   }
