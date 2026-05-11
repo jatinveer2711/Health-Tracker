@@ -19,7 +19,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard/getAll", {
+        const res = await axios.get("https://health-tracker-1-5pod.onrender.com/api/dashboard/getAll", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStats(res.data);
